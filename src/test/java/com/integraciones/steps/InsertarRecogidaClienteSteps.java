@@ -27,9 +27,9 @@ public class InsertarRecogidaClienteSteps {
 
         LocalDate hoy = LocalDate.now();
         LocalTime hora = LocalTime.now();
-        hoy = hoy.plusDays(1);
+      //  hoy = hoy.plusDays(1);
         hora = hora.plusHours(1);
-        LocalDateTime fechaCreacionResponse = LocalDateTime.of(hoy, hora);
+        LocalDateTime fechaCreacionResponse = LocalDateTime.of(hoy,hora);
         System.out.println("///////////////////////");
         System.out.println(fechaCreacionResponse);
 
