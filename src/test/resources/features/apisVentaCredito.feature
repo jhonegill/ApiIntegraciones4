@@ -59,7 +59,7 @@ Feature: Validar El Consumo De Las APIS De Venta Credito
 
     Examples:
       | metodoResultadoListaCotizar | idCLiente | idLocalidadOrigen | idLocalidadDestino | peso | valorDeclarado | idTipoEntrega | fecha      |
-      | ResultadoListaCotizar       | 996      | 11001000          | 05001000           | 3    | 150000         | 1             | 25-08-2022 |
+      | ResultadoListaCotizar       | 996      | 11001000          | 11001000           | 100    | 1000000         | 1             | 13-10-2022 |
 
 
   @metodoEstadoGuiasCliente

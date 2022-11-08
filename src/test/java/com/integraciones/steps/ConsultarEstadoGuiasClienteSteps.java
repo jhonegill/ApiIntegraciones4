@@ -7,7 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.given;
 
 public class ConsultarEstadoGuiasClienteSteps {
-    String numeroGuias = "[240000013925, 240000013958]";
+    String numeroGuias = "[240000000032, 240000000146]";
     RequestSpecification requestEstadosGuias = given();
     Response responseEstadosGuias;
 
