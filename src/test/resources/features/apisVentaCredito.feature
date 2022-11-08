@@ -3,10 +3,11 @@
 Feature: Validar El Consumo De Las APIS De Venta Credito
 
   @metodoInsertarAdmisionCliente
-  Scenario Outline: Creacion de Pre Envios|
-    Given el cliente configura el  usuario "<usuario>", token "<token>", idServicio "<idServicio>", idTipoEntrega "<idTipoEntrega>", valorDeclarado "<valorDeclarado>", aplicaContrapago "<aplicaContrapago>", diceContener "<diceContener>", peso "<peso>", idTipoEnvio "<idTipoEnvio>", numeroPieza "<numeroPieza>", idFormaPago "<idFormaPago>", descripcionTipoEntrega "<descripcionTipoEntrega>", observaciones "<observaciones>",largo "<largo>",ancho "<ancho>",alto "<alto>",nombreTipoEnvio "<nombreTipoEnvio>",codigoConvenio "<codigoConvenio>",idSucursal "<idSucursal>",idCliente "<idCliente>",remitente "<remitente>",idDestinatario "<idDestinatario>",tipoDocumento "<tipoDocumento>",numeroDocumento "<numeroDocumento>",nombre "<nombre>",primerApellido "<primerApellido>",segundoApellido "<segundoApellido>",telefono "<telefono>",direccion "<direccion>",correo "<correo>",idLocalidad "<idLocalidad>",idRemitente "<idRemitente>",convenioDestinatario "<convenioDestinatario>",codigoConvenioDestinatario "<codigoConvenioDestinatario>",notificacion "<notificacion>",numerodeFolios "<numerodeFolios>",codigoRapiRadicado "<codigoRapiRadicado>",idClienteCredito "<idClienteCredito>",codigoConvenioRemitente"<codigoConvenioRemitente>
-    When consume el metodo Post que permite "<metodoPreenvios>","<cantidadPreenvios>"
-    Then  puede ver el id y el numero de pre envio
+  Scenario Outline: Creacion de Pre Envios
+    Given registro de datos cliente credito y destinatario  "<usuario>", token "<token>", idServicio "<idServicio>", idTipoEntrega "<idTipoEntrega>", valorDeclarado "<valorDeclarado>", aplicaContrapago "<aplicaContrapago>", diceContener "<diceContener>", peso "<peso>", idTipoEnvio "<idTipoEnvio>", numeroPieza "<numeroPieza>", idFormaPago "<idFormaPago>", descripcionTipoEntrega "<descripcionTipoEntrega>", observaciones "<observaciones>",largo "<largo>",ancho "<ancho>",alto "<alto>",nombreTipoEnvio "<nombreTipoEnvio>",codigoConvenio "<codigoConvenio>",idSucursal "<idSucursal>",idCliente "<idCliente>",remitente "<remitente>",idDestinatario "<idDestinatario>",tipoDocumento "<tipoDocumento>",numeroDocumento "<numeroDocumento>",nombre "<nombre>",primerApellido "<primerApellido>",segundoApellido "<segundoApellido>",telefono "<telefono>",direccion "<direccion>",correo "<correo>",idLocalidad "<idLocalidad>",idRemitente "<idRemitente>",convenioDestinatario "<convenioDestinatario>",codigoConvenioDestinatario "<codigoConvenioDestinatario>",notificacion "<notificacion>",numerodeFolios "<numerodeFolios>",codigoRapiRadicado "<codigoRapiRadicado>",idClienteCredito "<idClienteCredito>",codigoConvenioRemitente"<codigoConvenioRemitente>
+    When  consume de servicio InsertarAdmision "<metodoPreenvios>","<cantidadPreenvios>"
+    Then  generacion de numero de preenvio
+
 
     Examples:
       | metodoPreenvios  | cantidadPreenvios | idServicio | idTipoEntrega | valorDeclarado | aplicaContrapago | diceContener                 | peso | idTipoEnvio | numeroPieza | idFormaPago | descripcionTipoEntrega | observaciones      | largo | ancho | alto | nombreTipoEnvio | codigoConvenio | idSucursal | idCliente | remitente | idDestinatario | tipoDocumento | numeroDocumento | nombre | primerApellido | segundoApellido   | telefono | direccion         | correo                        | idLocalidad | idRemitente | convenioDestinatario | codigoConvenioDestinatario | notificacion | numerodeFolios | codigoRapiRadicado | idClienteCredito | codigoConvenioRemitente | usuario       | token                                                                                                                                                                                                                                                                   |
@@ -37,7 +38,7 @@ Feature: Validar El Consumo De Las APIS De Venta Credito
     Then  puede ver el formato uno a uno
     Examples:
       | metodoPdfGuia           | usuario    | token |
-      | ObtenerBase64PdfPreGuia | userCopidrogaspruebasPRUE | bearer 1aaCeHNgpuCU-3sQ8oaNDL7frGBxd7lh6IyJh-eGS9HfN48coZVueh9gLh9ffAUx7GrBvuC823tma2rZlTPKpzUtj9rZBeOCWbTEadRENduskbUzieNDy-sMzPoWih_jnkX1Tl0XFT8ZLPdT8KLBgH96dQsIPl2mIyodA4V72JHBNqhHCplePmptMQ9heG4LBHNq0AoCZKV2Wmc5gHuC_der75zJzTmOS6xAiMk2l4TziRWqwZkYRt2JKU3dqLGd   |
+      | ObtenerBase64PdfPreGuia | userCopidrogaspruebasPRUE | bearer 1aaCeHNgpuCU-3sQ8oaNDL7frGBxd7lh6IyJh-eGS9HfN48coZVueh9gLh9ffAUx7GrBvuC823tma2rZlTPKpzUtj9rZBeOCWbTEadRENduskbUzieNDy-sMzPoWih_jnkX1Tl0XFT8ZLPdT8KLBgH96dQsIPl2mIyodA4V72JHBNqhHCplePmptMQ9heG4LBHNq0AoCZKV2Wmc5gHuC_der75zJzTmOS6xAiMk2l4TziRWqwZkYRt2JKU3dqLGd|
 
 
   @metodoObtenerPdfPreGuiaLote
