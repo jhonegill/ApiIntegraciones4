@@ -2,15 +2,11 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ApiIntegraciones - copia" />
-        <module name="ApiIntegraciones4" />
-        <module name="apitesting" />
-        <module name="CapillasDeLaFe" />
-        <module name="ApiIntegraciones2" />
         <module name="ApiIntegraciones" />
       </profile>
     </annotationProcessing>

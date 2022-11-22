@@ -10,19 +10,11 @@ public class ObtenerPdfPreGuiaDefinition {
     @Steps
     ObtenerPdfPreGuiaSteps pdfGuiasSteps;
 
-    @Given("^el cliente configura el usuario \"([^\"]*)\", token \"([^\"]*)\"$")
-    public void configurarPdfPreGuiar(String usuario, String token) {
-        pdfGuiasSteps.configurarPdfPreGuiar(usuario, token);
-    }
-
-    @When("^consume el metodo Get \"([^\"]*)\"$")
-    public void obtenerPdfPreGuia(String metodoPdfGuia) {
-        pdfGuiasSteps.obtenerPdfPreGuia(metodoPdfGuia);
-    }
-
-    @Then("^puede ver el formato uno a uno$")
-    public void formatoPdfUnoAuno() {
-        pdfGuiasSteps.formatoPdfUnoAuno();
-    }
-
+    @Given("^registro de datos cliente credito$")
+    public void registroDeDatosClienteCredito() {pdfGuiasSteps.configurarPdfPreGuiar();}
+    @When("^consume el metodo ObtenerBasePdfPreGuia$")
+    public void consumeElMetodoObtenerBasePdfPreGuia() {pdfGuiasSteps.obtenerPdfPreGuia();}
+    @Then("^evienciar  el formato etiqueta uno a uno$")
+    public void evienciarElFormatoEtiquetaUnoAUno() {pdfGuiasSteps.formatoPdfUnoAuno();
+        }
 }

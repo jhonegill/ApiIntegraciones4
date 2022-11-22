@@ -1,26 +1,23 @@
 package com.integraciones.steps;
 
+import com.integraciones.ConfVariables;
 import io.restassured.http.ContentType;
-
+import net.serenitybdd.rest.SerenityRest;
 import static io.restassured.RestAssured.given;
-import static net.serenitybdd.rest.RestRequests.when;
-import static net.serenitybdd.rest.SerenityRest.then;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class ObtenerEstadosGuiasSteps {
 
     public void configurarEstadosGuias() {
-        given().log().all().contentType(ContentType.JSON);
+        SerenityRest.given().log().all().contentType(ContentType.JSON);
     }
-
-    public void consumirEstadoGuias(String metodoObtenerEstadosGuias) {
-        String baseUri = "https://apitesting.interrapidisimo.co";
-        String path = "/ApiVentaCredito010/api/Admision";
-        when().get("" + baseUri + path + "/" + metodoObtenerEstadosGuias + "/");
+    public void consumirEstadoGuias() {
+        String baseUri = ConfVariables.getHost();
+        String path = ConfVariables.getPaths();
+        SerenityRest.given().log().all().when().get("" + baseUri + path + "/" + ConfVariables.getObtenerEstadosGuias() + "/");
     }
-
     public void obtenerEstadoGuias() {
-        then().log().all()
+        given().then().log().all()
                 .statusCode(200)
                 .body("esG_IdEstadoGuia", notNullValue());
     }

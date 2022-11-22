@@ -10,10 +10,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>2.0.11</serenity.version>
-        <serenity.maven.version>2.0.11</serenity.maven.version>
-        <serenity.cucumber.version>1.9.31</serenity.cucumber.version>
-        <surefire.plugin.version>1.9.31</surefire.plugin.version>
+        <serenity.version>2.1.10</serenity.version>
+        <serenity.maven.version>2.2.1</serenity.maven.version>
+        <serenity.cucumber.version>1.9.51</serenity.cucumber.version>
         <parallel.tests>2</parallel.tests>
         <webdriver.base.url>http://todomvc.com/examples/angularjs/#/</webdriver.base.url>
         <encoding>UTF-8</encoding>
@@ -74,7 +73,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -92,12 +91,12 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-core</artifactId>
-            <version>2.3.1</version>
+            <version>2.4.0</version>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>2.3.1</version>
+            <version>2.4.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>

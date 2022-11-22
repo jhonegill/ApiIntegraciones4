@@ -11,18 +11,11 @@ public class ConsultaEstadoGuiasClienteDefinition {
     @Steps
     ConsultarEstadoGuiasClienteSteps consultaEstadoGuiaStep;
 
-    @Given("^el cliente configura el usuario \"([^\"]*)\", token \"([^\"]*)\" y idCliente \"([^\"]*)\"$")
-    public void configurarEstadoGuiasCLientes(String usuario, String token, String idCliente) {
-        consultaEstadoGuiaStep.configurarEstadoGuiasCLientes(usuario, token, idCliente);
+    @Given("^el cliente configura el usuario$")
+    public void elClienteConfiguraElUsuario() {consultaEstadoGuiaStep.configurarEstadoGuiasCLientes();}
+    @When("^consume el metodo Post ConsultarEstadosGuiasCliente$")
+    public void consumeElMetodoPostConsultarEstadosGuiasCliente() {consultaEstadoGuiaStep.consumirEstadoGuiasClientes();
     }
-
-    @When("^consume el metodo Post \"([^\"]*)\"$")
-    public void consumirEstadoGuiasClientes(String metodoEstadoGuias) {
-        consultaEstadoGuiaStep.consumirEstadoGuiasClientes(metodoEstadoGuias);
-    }
-
     @Then("^obtiene el estado logistico de las guias$")
-    public void estadoGuiasClientes() {
-        consultaEstadoGuiaStep.estadoGuiasClientes();
-    }
+    public void estadoGuiasClientes() {consultaEstadoGuiaStep.estadoGuiasClientes();}
 }

@@ -11,18 +11,16 @@ public class InsertarRecogidaClienteDefinition {
     @Steps
     InsertarRecogidaClienteSteps recogidaSteps;
 
-    @Given("^el cliente configura el \"([^\"]*)\", token \"([^\"]*)\", idClienteCredito \"([^\"]*)\" y idSucursalCliente \"([^\"]*)\"$")
-    public void configurarRecogida(String usuario, String token, String idClienteCredito, String idSucursalCliente)   {
-        recogidaSteps.configurarRecogida(usuario, token, idClienteCredito, idSucursalCliente);
+    @Given("^registro de datos cliente credito y de preenvio\\(s\\) a recoger$")
+    public void registroDeDatosClienteCreditoYDePreenvioSARecoger() {
+        recogidaSteps.configurarRecogida();
     }
-
-    @When("^consume el metodo Post llamado \"([^\"]*)\"$")
-    public void consumirRecogidaCliente(String metodoRecogidas ) {
-        recogidaSteps.consumirRecogidaCliente(metodoRecogidas);
+    @When("^consume el metodo  llamado InsertarRecogidaCliente$")
+    public void consumeElMetodoLlamadoInsertarRecogidaCliente() {
+        recogidaSteps.consumirRecogidaCliente();
     }
-
-    @Then("^puede generar el id de la recogida$")
-    public void generarRecogidas() {
+    @Then("^generacion de numero de recogida$")
+    public void generacionDeNumeroDeRecogida() {
         recogidaSteps.generarRecogidas();
     }
 }

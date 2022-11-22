@@ -9,19 +9,11 @@ import net.thucydides.core.annotations.Steps;
 public class ObtenerPdfPreGuiaLoteDefinition {
     @Steps
     ObtenerPdfPreGuiaLoteSteps pdfGuiasLoteSteps;
-
-    @Given("^el cliente configura el usuario \"([^\"]*)\", token \"([^\"]*)\",idCliente\"([^\"]*)\", idSucursal\"([^\"]*)\", porRangoFecha\"([^\"]*)\",fechaInicio\"([^\"]*)\",fechaFinal\"([^\"]*)\",formato\"([^\"]*)\"$")
-    public void configurarformatoGuiaLote(String usuario, String token, String idCliente, String idSucursal, String porRangoFecha, String fechaInicio, String fechaFinal, String formato) {
-        pdfGuiasLoteSteps.configurarFormatoGuiaLote(usuario, token, idCliente, idSucursal, porRangoFecha, fechaInicio, fechaFinal, formato);
+    @Given("^registro de datos cliente credito y preenvios a consultar$")
+    public void registroDeDatosClienteCreditoYPreenviosAConsultar() {pdfGuiasLoteSteps.configurarFormatoGuiaLote();
     }
-
-    @When("^consume el metodo Post para \"([^\"]*)\"$")
-    public void consumirPdfPreGuiaLote(String metodoPdfGuiaLote) {
-        pdfGuiasLoteSteps.consumirPdfPreGuiaLote(metodoPdfGuiaLote);
-    }
-
-    @Then("^puede ver el formato del pre envio por lote$")
-    public void obtenerPdfPreGuiaLote() {
-        pdfGuiasLoteSteps.obtenerPdfPreGuiaLote();
-    }
+    @When("^consume el metodo  ObtenerBasePdfPreGuias$")
+    public void consumeElMetodoObtenerBasePdfPreGuias() { pdfGuiasLoteSteps.consumirPdfPreGuiaLote();}
+    @Then("^evienciar  el formato etiqueta por lote$")
+    public void evienciarElFormatoEtiquetaPorLote() {pdfGuiasLoteSteps.obtenerPdfPreGuiaLote();}
 }

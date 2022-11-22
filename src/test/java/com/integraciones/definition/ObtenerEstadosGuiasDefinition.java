@@ -10,18 +10,16 @@ public class ObtenerEstadosGuiasDefinition {
     @Steps
     ObtenerEstadosGuiasSteps estadosGuiasSteps;
 
-    @Given("^el cliente realiza la configuracion del metodo ObtenerEstadosGuias$")
-    public void configurarEstadosGuias() {
-        estadosGuiasSteps.configurarEstadosGuias();
+    @Given("^el cliente realiza consulta  de estados de las Guias$")
+    public void elClienteRealizaConsultaDeEstadosDeLasGuias() {estadosGuiasSteps.configurarEstadosGuias();}
+    @When("^consume el metodo llamado ObtenerEstadosGuias$")
+    public void consumeElMetodoLlamadoObtenerEstadosGuias() {
+        estadosGuiasSteps.consumirEstadoGuias();
     }
-
-    @When("^consume el metodo Get llamado \"([^\"]*)\"$")
-    public void consumirEstadoGuias(String metodoObtenerEstadosGuias) {
-        estadosGuiasSteps.consumirEstadoGuias(metodoObtenerEstadosGuias);
-    }
-
-    @Then("puede ver los estados logisticos de las guias$")
-    public void obtenerEstadoGuias() {
+    @Then("^evienciar  los estados logisticos de las guias$")
+    public void evienciarLosEstadosLogisticosDeLasGuias() {
         estadosGuiasSteps.obtenerEstadoGuias();
     }
+
+
 }

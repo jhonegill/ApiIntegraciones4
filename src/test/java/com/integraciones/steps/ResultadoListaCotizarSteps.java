@@ -1,6 +1,8 @@
 package com.integraciones.steps;
 
+import com.integraciones.ConfVariables;
 import io.restassured.http.ContentType;
+import net.serenitybdd.rest.SerenityRest;
 
 import static net.serenitybdd.rest.SerenityRest.*;
 import static org.hamcrest.Matchers.notNullValue;
@@ -8,13 +10,16 @@ import static org.hamcrest.Matchers.notNullValue;
 public class ResultadoListaCotizarSteps {
 
     public void configurarResultadoListaCotizar() {
-        given().log().all().contentType(ContentType.JSON);
+        SerenityRest.given().log().all().contentType(ContentType.JSON);
     }
-    public void consumirResultadoListaCotizar(String resultadoListaCotizar, String idCLiente, String idLocalidadOrigen, String idLocalidadDestino, String peso, String valorDeclarado, String idTipoEntrega, String fecha) {
-        String baseUri = "https://apitesting.interrapidisimo.co";
-        String path = "/ApiServInterPruebas/api/CotizadorCliente";
-        when().get("" + baseUri + path + "/" + resultadoListaCotizar + "/" + idCLiente + "/" + idLocalidadOrigen + "/" + idLocalidadDestino + "/" + peso + "/" + valorDeclarado + "/" + idTipoEntrega + "/" + fecha + "");
-
+    public void consumirResultadoListaCotizar() {
+        given().log().all().when().get("" + ConfVariables.getHost() + ConfVariables.getPathsCotizador()
+                + "/" + ConfVariables.getMetodoResultadoListaCotizar()
+                + "/" + Integer.parseInt(ConfVariables.getIdClienteCredito()) + "/"
+                + Integer.parseInt(ConfVariables.geIdLocalidadOrigen())
+                + "/" + Integer.parseInt(ConfVariables.geIdLocalidadDestino()) + "/" + ConfVariables.getPeso()
+                + "/" + Integer.parseInt(ConfVariables.getValorDeclarado()) + "/"
+                + Integer.parseInt(ConfVariables.getIdtipoEntrega()) + "/" + ConfVariables.getIFecha() + "");
     }
     public void resultadoListaCotizar() {
         then().log().all()
